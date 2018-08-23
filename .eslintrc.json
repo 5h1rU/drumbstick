@@ -1,0 +1,29 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "babel",
+    "react",
+    "prettier"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "google",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react"
+  ],
+  "rules": {
+    "require-jsdoc": "off",
+    "react/prop-types": "off",
+    "no-invalid-this": "off",
+    "babel/new-cap": "off",
+    "babel/object-curly-spacing": "off",
+    "babel/no-invalid-this": "error",
+    "babel/semi": 1
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  }
+}

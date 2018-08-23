@@ -1,0 +1,61 @@
+{
+  "name": "mariscal",
+  "version": "1.0.0",
+  "description": "React Components",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel build index.html --public-url ./",
+    "commit": "git-cz",
+    "pretty": "prettier --write --tab-width 2 \"src/**/*.js\"",
+    "precommit": "lint-staged",
+    "commitmsg": "commitlint -e && npm test",
+    "start": "parcel index.html --no-cache",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Felipe Janer",
+  "license": "MIT",
+  "private": false,
+  "lint-staged": {
+    "*.js": [
+      "npm run pretty",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "normalizr": "^3.2.4",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "styled-components": "^3.3.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-runtime": "^6.26.0",
+    "commitizen": "^2.9.6",
+    "eslint": "^5.1.0",
+    "eslint-config-google": "0.9.1",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.10.0",
+    "husky": "^0.14.3",
+    "jest": "^23.4.1",
+    "less": "^3.7.1",
+    "lint-staged": "^7.0.0",
+    "parcel-bundler": "^1.6.2",
+    "prettier": "^1.13.7"
+  }
+}
