@@ -1,0 +1,89 @@
+@import "./node_modules/antd/dist/antd.less";
+@primary-color: #2cc66c;
+
+.App {
+  padding: 20px;
+}
+
+.trigger {
+  font-size: 1rem;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: #ffffff;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  background: #ffff;
+  padding: 0;
+}
+
+.header .logo {
+  width: 60%;
+  display: block;
+  margin: 12px auto;
+}
+
+.header-search {
+  height: 62px;
+  border: none;
+}
+
+.header-search i {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 1.5em;
+}
+
+.header-search input {
+  padding-left: 40px !important;
+  font-size: 1em;
+  font-weight: lighter;
+  border: none;
+}
+
+.header-search input:focus {
+  box-shadow: none;
+}
+
+.header-menu ul {
+  line-height: 62px;
+}
+
+/* content section */
+.hero-section {
+  margin-top: 3.5em;
+}
+
+.card-date div{
+  width: 32px;
+  height: 16px;
+  color: @primary-color;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.card-date .ant-avatar {
+  background: transparent;
+  color: #666a73;
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+/* Card Animation */
+.ant-card:hover > .ant-card-cover img {
+  transform: scale(1.1);
+}
+
+.ant-card-cover {
+  overflow: hidden;
+}
+
+.ant-card-cover img {
+  transition: transform .6s; /* Animation */
+}
