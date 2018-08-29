@@ -31,6 +31,8 @@
     "ant-design-pro": "^1.4.4",
     "antd": "^3.8.2",
     "axios": "^0.18.0",
+    "cleave": "^1.0.0-alpha.10",
+    "cleave.js": "^1.4.4",
     "img": "^3.0.3",
     "normalizr": "^3.2.4",
     "prop-types": "^15.6.1",

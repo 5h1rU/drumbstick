@@ -1,5 +1,8 @@
-@import "./node_modules/antd/dist/antd.less";
+@import './node_modules/antd/dist/antd.less';
+@import './node_modules/ant-design-pro/dist/ant-design-pro.less';
+
 @primary-color: #2cc66c;
+@border-radius-base: 0;
 
 .App {
   padding: 20px;
@@ -60,7 +63,7 @@
   margin-top: 3.5em;
 }
 
-.card-date div{
+.card-date div {
   width: 32px;
   height: 16px;
   color: @primary-color;
@@ -85,5 +88,18 @@
 }
 
 .ant-card-cover img {
-  transition: transform .6s; /* Animation */
+  transition: transform 0.6s; /* Animation */
+}
+
+// Tickets
+.tickets-price .ant-list-item {
+  background: white;
+  border-color: @border-color-base;
+  padding: 1em;
+  border-left: 5px solid;
+  margin-bottom: 1em;
+}
+
+.tickets-price .ant-list-item:hover {
+  box-shadow: @box-shadow-base;
 }

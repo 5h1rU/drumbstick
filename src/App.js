@@ -1,59 +1,11 @@
 import React from 'react';
-import {
-  Layout,
-  Input,
-  Menu,
-  Icon,
-  Row,
-  Col,
-  Badge,
-  Card,
-  List,
-  Avatar
-} from 'antd';
+import { Layout, Input, Menu, Icon, Row, Col, Badge } from 'antd';
 // import './App.less';
 import cymbals from './img/logoCymbals@3x.png';
+import EventsHome from './EventsHome';
+import EventsDetails from './EventsDetails';
 
-const { Header, Footer, Sider, Content } = Layout;
-const { SubMenu } = Menu;
-const { Meta } = Card;
-
-const date = () => (
-  <div className="card-date">
-    <div>AGO</div>
-    <Avatar>29</Avatar>
-  </div>
-);
-
-const EventsCard = ({ image }) => {
-  const details = (
-    <List>
-      <List.Item>
-        <List.Item.Meta
-          avatar={
-            <div className="card-date">
-              <div>AGO</div>
-              <Avatar>29</Avatar>
-            </div>
-          }
-          title="FREE Erosion Control using Concrete Mattresses"
-          description="342 W Oates Rd, Garland, TX"
-        />
-      </List.Item>
-    </List>
-  );
-
-  return (
-    <Card
-      hoverable
-      cover={<img alt="example" src={image} />}
-      style={{ marginTop: '16px' }}
-    >
-      {details}
-      {/* <Meta title="estadio olimpico pascual guerrero" description={details} /> */}
-    </Card>
-  );
-};
+const { Header, Footer, Content } = Layout;
 
 export default class App extends React.Component {
   state = {
@@ -103,24 +55,8 @@ export default class App extends React.Component {
           </Row>
         </Header>
         <Content>
-          <Row>
-            <Col span={22} offset={1} className="hero-section">
-              <Row gutter={16}>
-                <Col span={6}>
-                  <EventsCard image="https://placeimg.com/640/480/architecture" />
-                </Col>
-                <Col span={6}>
-                  <EventsCard image="https://placeimg.com/640/480/animals" />
-                </Col>
-                <Col span={6}>
-                  <EventsCard image="https://placeimg.com/640/480/tech" />
-                </Col>
-                <Col span={6}>
-                  <EventsCard image="https://placeimg.com/640/480/nature" />
-                </Col>
-              </Row>
-            </Col>
-          </Row>
+          {/* <EventsHome /> */}
+          <EventsDetails />
         </Content>
         <Footer style={{ textAlign: 'center' }}>
           Cymbals Tickets System ©2018
