@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Input, Menu, Icon, Row, Col, Badge } from 'antd';
+import { Layout, AutoComplete, Menu, Icon, Row, Col, Badge, Input } from 'antd';
 // import './App.less';
 import cymbals from './img/logoCymbals@3x.png';
 import EventsHome from './EventsHome';
@@ -27,14 +27,20 @@ export default class App extends React.Component {
             <Col span={2}>
               <img className="logo" src={cymbals} alt="cymbals" />
             </Col>
-            <Col span={14}>
-              <Input
-                className="header-search"
-                placeholder="Buscar Evento..."
-                prefix={<Icon type="search" />}
-              />
+            <Col span={13}>
+              <AutoComplete
+                dataSource={['1', '2', '3']}
+                style={{ width: '100%' }}
+              >
+                <Input
+                  size="large"
+                  className="header-search"
+                  placeholder="Buscar Evento..."
+                  prefix={<Icon type="search" />}
+                />
+              </AutoComplete>
             </Col>
-            <Col span={6} offset={2} className="header-menu">
+            <Col span={7} offset={2} className="header-menu">
               <Menu
                 onClick={this.handleClick}
                 selectedKeys={[this.state.current]}

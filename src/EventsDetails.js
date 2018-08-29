@@ -3,7 +3,7 @@ import { Col, Row, List, Select, Button, Card, Divider, Affix } from 'antd';
 import DescriptionList from 'ant-design-pro/lib/DescriptionList';
 import Description from 'ant-design-pro/lib/DescriptionList/Description';
 import map from './img/map.png';
-import PaymentForm from './PaymentForm';
+import PaymentTabs from './PaymentTabs';
 
 const { Option } = Select;
 
@@ -106,7 +106,8 @@ const EventsDetails = () => (
     <Col span={6} offset={1} className="hero-section tickets-price">
       <Affix>
         {/* <TicketsDetails /> */}
-        <PaymentForm />
+        {/* <PaymentForm /> */}
+        <PaymentTabs />
       </Affix>
     </Col>
   </Row>

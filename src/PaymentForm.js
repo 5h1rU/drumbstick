@@ -1,6 +1,6 @@
 import React from 'react';
 import Cleave from 'cleave.js/react';
-import { Form, Input, Button, Select, Col } from 'antd';
+import { Form, Input, Button, Select, Col, Row } from 'antd';
 // import visa from './img/cards/visa.png';
 // import amex from './img/cards/amex.png';
 // import discover from './img/cards/discover.png';
@@ -56,23 +56,29 @@ class NormalForm extends React.Component {
           )}
         </FormItem>
         <FormItem label="Fecha de expiración">
-          <Col span={12}>
-            <Select size="large" placeholder="MM">
-              <Option value="1">01</Option>
-              <Option value="2">02</Option>
-              <Option value="3">03</Option>
-              <Option value="4">04</Option>
-            </Select>
-          </Col>
-          <Col span={12}>
-            <Select size="large" placeholder="AAAA">
-              <Option value="0">2018</Option>
-              <Option value="1">2019</Option>
-              <Option value="2">2020</Option>
-              <Option value="3">2021</Option>
-              <Option value="4">2022</Option>
-            </Select>
-          </Col>
+          {getFieldDecorator('expiration', {
+            rules: [{ required: true, message: 'Please use a valid date' }]
+          })(
+            <Row>
+              <Col span={12}>
+                <Select size="large" placeholder="MM">
+                  <Option value="1">01</Option>
+                  <Option value="2">02</Option>
+                  <Option value="3">03</Option>
+                  <Option value="4">04</Option>
+                </Select>
+              </Col>
+              <Col span={12}>
+                <Select size="large" placeholder="AAAA">
+                  <Option value="0">2018</Option>
+                  <Option value="1">2019</Option>
+                  <Option value="2">2020</Option>
+                  <Option value="3">2021</Option>
+                  <Option value="4">2022</Option>
+                </Select>
+              </Col>
+            </Row>
+          )}
         </FormItem>
         <FormItem label="Número de cuotas">
           <Col span={12}>
