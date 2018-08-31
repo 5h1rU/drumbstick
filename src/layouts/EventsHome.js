@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'antd';
-import EventsCard from './EventsCard';
+import EventsCard from '../components/events/EventsCard';
 
 const EventsHome = () => (
   <Row>

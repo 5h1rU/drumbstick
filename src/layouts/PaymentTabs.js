@@ -1,6 +1,6 @@
 import React from 'react';
-import { Tabs, Icon, Col } from 'antd';
-import PaymentForm from './PaymentForm';
+import { Tabs } from 'antd';
+import PaymentForm from '../components/purchasingFlow/PaymentForm';
 
 const { TabPane } = Tabs;
 
