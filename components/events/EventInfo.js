@@ -38,7 +38,7 @@ const EventInfo = () => (
     <Divider orientation="left">Ubicación</Divider>
     <div>
       <h2>Estadio Pascual Guerrero, Cali, Valle del Cauca</h2>
-      {/* <img style={{ width: '100%' }} src={map} /> */}
+      <img style={{ width: '100%' }} src="static/map.png" />
     </div>
   </Card>
 );
