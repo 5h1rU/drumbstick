@@ -1,5 +1,6 @@
 .DS_Store
 .cache
+.next
 node_modules/
 dist/
 npm-debug.log

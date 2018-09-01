@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, List, Avatar } from 'antd';
+import { List, Card, Avatar } from 'antd';
 
 const EventsCard = ({ image }) => {
   const details = (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Divider } from 'antd';
 import MainDetails from './MainDetails';
-import map from './img/map.png';
+// import map from '../../src/img/map.png';
 
 const EventInfo = () => (
   <Card
@@ -38,7 +38,7 @@ const EventInfo = () => (
     <Divider orientation="left">Ubicación</Divider>
     <div>
       <h2>Estadio Pascual Guerrero, Cali, Valle del Cauca</h2>
-      <img style={{ width: '100%' }} src={map} />
+      {/* <img style={{ width: '100%' }} src={map} /> */}
     </div>
   </Card>
 );

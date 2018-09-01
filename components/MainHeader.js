@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout, AutoComplete, Menu, Icon, Row, Col, Badge, Input } from 'antd';
-import cymbals from '../img/logoCymbals@3x.png';
+// import cymbals from '../img/logoCymbals@3x.png';
 
 const { Header } = Layout;
 
@@ -9,7 +9,9 @@ const MainHeader = () => (
   <Header className="header">
     <Row>
       <Col span={2}>
-        <img className="logo" src={cymbals} alt="cymbals" />
+        {/* <Link to="/"> */}
+        {/* <img className="logo" src={cymbals} alt="cymbals" /> */}
+        {/* </Link> */}
       </Col>
       <Col span={13}>
         <AutoComplete dataSource={['1', '2', '3']} style={{ width: '100%' }}>

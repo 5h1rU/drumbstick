@@ -1,7 +1,15 @@
 import React from 'react';
 import { List, Button, Select } from 'antd';
+import Link from 'next/link';
+import Router from 'next/router';
 
 const { Option } = Select;
+
+const event = () => {
+  const href = '/event/payment';
+  const as = href;
+  Router.push(href, as, { shallow: true });
+};
 
 function handleChange(value) {
   // console.log(`selected ${value}`);
@@ -43,7 +51,7 @@ const TicketsDetails = () => (
   <React.Fragment>
     <Details />
     <Total />
-    <Button type="primary" size="large" block>
+    <Button type="primary" size="large" block onClick={event}>
       Pagar
     </Button>
   </React.Fragment>
