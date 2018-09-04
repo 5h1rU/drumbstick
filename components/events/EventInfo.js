@@ -3,16 +3,17 @@ import { Card, Divider } from 'antd';
 import MainDetails from './MainDetails';
 // import map from '../../src/img/map.png';
 
-const EventInfo = () => (
+const EventInfo = ({ event }) => (
   <Card
     cover={
       <img src="https://howtobecome-matthiashombauer.netdna-ssl.com/wp-content/uploads/2016/05/Destroyer_Blog_3-1-1000x567.jpg" />
     }
   >
-    <MainDetails />
+    <MainDetails event={event} />
     <Divider orientation="left">Descripción</Divider>
     <section>
       <p>
+        {event.name}
         La adicción al trabajo, la depresión post-jubilación, el rebusque, las
         ventas de empanadas, las hojas de vida, las entrevistas de trabajo y
         hasta la poesía, se juntan y se revuelven en EL PUESTO, una comedia
@@ -38,7 +39,7 @@ const EventInfo = () => (
     <Divider orientation="left">Ubicación</Divider>
     <div>
       <h2>Estadio Pascual Guerrero, Cali, Valle del Cauca</h2>
-      <img style={{ width: '100%' }} src="static/map.png" />
+      <img style={{ width: '100%' }} src="../../static/map.png" />
     </div>
   </Card>
 );

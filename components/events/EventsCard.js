@@ -1,7 +1,7 @@
 import React from 'react';
 import { List, Card, Avatar } from 'antd';
 
-const EventsCard = ({ image }) => {
+const EventsCard = ({ image, name }) => {
   const details = (
     <List>
       <List.Item>
@@ -12,7 +12,7 @@ const EventsCard = ({ image }) => {
               <Avatar>29</Avatar>
             </div>
           }
-          title="FREE Erosion Control using Concrete Mattresses"
+          title={name}
           description="342 W Oates Rd, Garland, TX"
         />
       </List.Item>
