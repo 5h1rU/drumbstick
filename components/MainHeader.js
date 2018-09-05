@@ -2,9 +2,16 @@ import React from 'react';
 import { Layout, AutoComplete, Menu, Icon, Row, Col, Badge, Input } from 'antd';
 import Link from 'next/link';
 const { Header } = Layout;
+import { connect } from 'react-redux';
+import { getEvents } from '../store/events/reducer';
+
+const showEvents = events =>
+  events.map(event => {
+    return event.name;
+  });
 
 // TODO: take a look to this.*
-const MainHeader = () => (
+const MainHeader = ({ events }) => (
   <Header className="header">
     <Row>
       <Col span={2}>
@@ -19,7 +26,7 @@ const MainHeader = () => (
         </Link>
       </Col>
       <Col span={13}>
-        <AutoComplete dataSource={['1', '2', '3']} style={{ width: '100%' }}>
+        <AutoComplete dataSource={showEvents(events)} style={{ width: '100%' }}>
           <Input
             size="large"
             className="header-search"
@@ -50,4 +57,13 @@ const MainHeader = () => (
   </Header>
 );
 
-export default MainHeader;
+const mapStateToProps = state => ({
+  events: getEvents(state.events)
+});
+
+export default connect(
+  mapStateToProps,
+  null
+)(MainHeader);
+
+// export default MainHeader;

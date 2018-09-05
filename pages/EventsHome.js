@@ -6,6 +6,7 @@ import { Row, Col, List, Icon } from 'antd';
 import { fetchEventsRequest } from '../store/events/actions';
 import EventsCard from '../components/events/EventsCard';
 import { getEvents, getFetchingStatus } from '../store/events/reducer';
+import { getVenues } from '../store/venues/reducer';
 class EventsHome extends React.Component {
   componentDidMount() {
     this.props.fetchEventsRequest();
@@ -38,8 +39,9 @@ class EventsHome extends React.Component {
                 >
                   <a>
                     <EventsCard
-                      image="https://placeimg.com/640/480/animals"
+                      image="../static/petronio.jpg"
                       name={event.name}
+                      place={this.props.venues[event.venue]}
                     />
                   </a>
                 </Link>
@@ -54,7 +56,8 @@ class EventsHome extends React.Component {
 
 const mapStateToProps = state => ({
   loading: getFetchingStatus(state.events),
-  events: getEvents(state.events)
+  events: getEvents(state.events),
+  venues: getVenues(state.venues)
 });
 
 const mapDispatchToProps = dispatch => {
