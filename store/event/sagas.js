@@ -6,7 +6,6 @@ import { getEventById } from '../../resources/events';
 function* fetchEventById({ id }) {
   try {
     const event = yield call(getEventById, id);
-    console.log(event);
     yield put(actions.fetchEventSuccess(event));
   } catch (error) {
     yield put(actions.fetchEventFailure(error.message));

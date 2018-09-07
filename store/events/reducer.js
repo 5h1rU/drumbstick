@@ -1,11 +1,10 @@
 import { combineReducers } from 'redux';
-
 import {
   FETCH_EVENTS_REQUEST,
   FETCH_EVENTS_SUCCESS,
-  FETCH_EVENTS_FAILURE,
-  FETCH_EVENT_SUCCESS
+  FETCH_EVENTS_FAILURE
 } from './constants';
+import { FETCH_EVENT_SUCCESS } from '../event/constants';
 
 const isFetching = (state = false, action) => {
   switch (action.type) {

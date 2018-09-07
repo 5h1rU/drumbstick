@@ -1,8 +1,6 @@
 import React from 'react';
 import { List, Card, Avatar } from 'antd';
 
-const { Meta } = Card;
-
 const EventsCard = ({ image, name, place }) => {
   const details = (
     <List>

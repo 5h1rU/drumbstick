@@ -22,17 +22,17 @@ export const fetchVenuesFailure = error => ({
   error
 });
 
-export const fetchEventRequest = id => ({
+export const fetchVenueRequest = id => ({
   type: FETCH_VENUE_REQUEST,
   id
 });
 
-export const fetchEventSuccess = action => ({
+export const fetchVenueSuccess = action => ({
   type: FETCH_VENUE_SUCCESS,
   action
 });
 
-export const fetchEventFailure = error => ({
+export const fetchVenueFailure = error => ({
   type: FETCH_VENUE_FAILURE,
   error
 });

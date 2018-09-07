@@ -7,6 +7,13 @@ import { fetchEventsRequest } from '../store/events/actions';
 import EventsCard from '../components/events/EventsCard';
 import { getEvents, getFetchingStatus } from '../store/events/reducer';
 import { getVenues } from '../store/venues/reducer';
+/*
+    order: {
+      [ticketId]: { quantity, total, unitPrice, event, locality },
+      payment: {...}
+      total: ([ticketId].total + [ticketId].total...)
+    }
+*/
 class EventsHome extends React.Component {
   componentDidMount() {
     this.props.fetchEventsRequest();
