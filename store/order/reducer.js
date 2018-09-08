@@ -1,29 +1,19 @@
 import { combineReducers } from 'redux';
-import { ADD_TICKET, REMOVE_TICKET } from './constants';
-
-const initialState = {
-  tickets: {}
-};
+import { CREATE_ORDER, REMOVE_ORDER } from './constants';
 
 const tickets = (state = {}, action) => {
   switch (action.type) {
-    case ADD_TICKET:
-      return { ...state, [action.ticket._id]: action.ticket };
-    case REMOVE_TICKET:
+    case CREATE_ORDER:
+      return { ...state, [action.order._id]: action.order };
+    case REMOVE_ORDER:
       const newState = { ...state };
-      delete newState[action.ticketId];
+      delete newState[action.order];
       return newState;
     default:
       return state;
   }
 };
 
-export const getTotal = (order, tickets) => {
-  const ticketsIds = Object.keys(order.tickets);
-  return ticketsIds
-    .map(id => order.tickets[id])
-    .reduce((acc, curr) => acc + curr.price * curr.quantity, 0);
-};
-export const getOrder = order => order;
+export const getCart = order => order;
 
 export default combineReducers({ tickets });

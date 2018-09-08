@@ -7,6 +7,7 @@ import { fetchEventsRequest } from '../store/events/actions';
 import EventsCard from '../components/events/EventsCard';
 import { getEvents, getFetchingStatus } from '../store/events/reducer';
 import { getVenues } from '../store/venues/reducer';
+import { getCart } from '../store/cart/reducer';
 /*
     order: {
       [ticketId]: { quantity, total, unitPrice, event, locality },
@@ -64,7 +65,8 @@ class EventsHome extends React.Component {
 const mapStateToProps = state => ({
   loading: getFetchingStatus(state.events),
   events: getEvents(state.events),
-  venues: getVenues(state.venues)
+  venues: getVenues(state.venues),
+  cart: getCart(state.cart)
 });
 
 const mapDispatchToProps = dispatch => {

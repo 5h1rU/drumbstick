@@ -15,6 +15,34 @@ const event = new schema.Entity(
 //   venues: [venue]
 // });
 
+/**
+ * Backend will generate an Cart ID
+ *
+ */
+
+const cart = new schema.Entity('cart', {}, { idAttribute: '_id' });
+export async function getCart() {
+  try {
+    const response = await api.get('/cart');
+    return normalize(response.data.cart, cart);
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function createCart({ productId, quantity, userId = undefined }) {
+  try {
+    const response = await api.put('/cart', {
+      id: productId,
+      quantity,
+      userId
+    });
+    return normalize(response.data.cart, cart);
+  } catch (error) {
+    throw error;
+  }
+}
+
 const events = [event];
 
 export async function getAllEvents() {

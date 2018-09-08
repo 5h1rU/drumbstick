@@ -1,11 +1,11 @@
-import { ADD_TICKET, REMOVE_TICKET } from './constants';
+import { CREATE_ORDER, REMOVE_ORDER } from './constants';
 
-export const addTicket = ticket => ({
-  type: ADD_TICKET,
-  ticket
+export const createOrder = order => ({
+  type: CREATE_ORDER,
+  order
 });
 
-export const removeTicket = ticketId => ({
-  type: REMOVE_TICKET,
-  ticketId
+export const removeOrder = orderId => ({
+  type: REMOVE_ORDER,
+  orderId
 });

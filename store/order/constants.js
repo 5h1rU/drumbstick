@@ -1,2 +1,2 @@
-export const ADD_TICKET = 'ADD_TICKET';
-export const REMOVE_TICKET = 'REMOVE_TICKET';
+export const CREATE_ORDER = 'CREATE_ORDER';
+export const REMOVE_ORDER = 'REMOVE_ORDER';
