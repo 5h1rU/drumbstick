@@ -46,7 +46,7 @@
     "babel-runtime": "6.26.0",
     "commitizen": "2.10.1",
     "eslint": "5.4.0",
-    "eslint-config-google": "0.9.1",
+    "eslint-config-google": "0.11.0",
     "eslint-config-prettier": "3.0.1",
     "eslint-plugin-babel": "5.1.0",
     "eslint-plugin-prettier": "2.6.2",
