@@ -34,7 +34,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
-    "styled-components": "^3.3.3"
+    "styled-components": "^4.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "7.1.1",
