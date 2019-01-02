@@ -46,7 +46,7 @@ const tickets = (state = {}, action) => {
         ...(action.cart.entities.cart[action.cart.result].products.map(
           product => {
             return {
-              [product._id]: { quantity: product.quantity }
+              [product.product._id]: { quantity: product.quantity }
             };
           }
         )[0] || {})

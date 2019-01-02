@@ -9,11 +9,7 @@ const event = new schema.Entity(
   { venue, tickets },
   { idAttribute: '_id' }
 );
-
-// const events = new schema.Object({
-//   events: [event]
-//   venues: [venue]
-// });
+const events = [event];
 
 /**
  * Backend will generate an Cart ID
@@ -30,25 +26,28 @@ export async function getCart() {
   }
 }
 
-export async function createCart({ productId, quantity, userId = undefined }) {
+export async function createUser() {
   try {
-    const response = await api.put('/cart', {
-      id: productId,
-      quantity,
-      userId
-    });
+    const response = await api.get('/account');
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function createCart(payload) {
+  try {
+    const response = await api.put('/cart', [...payload]);
     return normalize(response.data.cart, cart);
   } catch (error) {
     throw error;
   }
 }
 
-const events = [event];
-
 export async function getAllEvents() {
   try {
     const response = await api.get('/events');
-    return normalize(response.data.events.docs, events);
+    return normalize(response.data.event.docs, events);
   } catch (error) {
     throw error;
   }

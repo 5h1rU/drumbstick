@@ -12,11 +12,13 @@ const tickets = (state = {}, action) => {
   }
 };
 
-export const getTicketsByEventId = (state, event) => {
-  const ids = Object.keys(state);
+export const getTicketsByEventId = (tickets, event) => {
+  const ids = Object.keys(tickets);
   return ids
-    .filter(id => state[id].event === getEvent(event)._id)
-    .map(ticketId => state[ticketId]);
+    .filter(id => tickets[id].event === getEvent(event)._id)
+    .map(ticketId => {
+      return tickets[ticketId];
+    });
 };
 
 export const getTickets = state =>

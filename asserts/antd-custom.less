@@ -100,3 +100,16 @@
 .tickets-price .ant-list-item:hover {
   box-shadow: @box-shadow-base;
 }
+
+.zoom {
+  animation: scaleAnimation .2s;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -5,7 +5,7 @@ import MainDetails from './MainDetails';
 const EventInfo = ({ event, venue }) => (
   <Card
     cover={
-      <img src="https://howtobecome-matthiashombauer.netdna-ssl.com/wp-content/uploads/2016/05/Destroyer_Blog_3-1-1000x567.jpg" />
+      <img src="https://img3.stockfresh.com/files/p/photocreo/m/45/1525923_stock-photo-people-on-music-concert.jpg" />
     }
   >
     <MainDetails event={event} place={venue.name} />

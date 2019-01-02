@@ -2,7 +2,6 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Col, Row, Affix, Button } from 'antd';
-// import PaymentTabs from './PaymentTabs';
 import EventInfo from '../components/events/EventInfo';
 import TicketsDetails from '../components/events/TicketsDetails';
 import { addTicket, removeTicket, getTotal } from '../store/cart/actions';
@@ -11,7 +10,8 @@ import { getEvent, getFetchingStatus } from '../store/event/reducer';
 import { getVenue } from '../store/venues/reducer';
 import { getTicketsByEventId } from '../store/tickets/reducer';
 import { createCartRequest } from '../store/cart/actions';
-import { Router } from '../routes';
+// import { Router } from '../routes';
+
 import {
   getCart,
   getTotalPrice,
@@ -29,16 +29,32 @@ class EventsDetails extends React.Component {
   }
 
   goTocheckout() {
-    // Show loading spinner when send POST to '/cart' and then replace <TicketDetails> with <PaymentTabs>
-    // { productId, quantity, userId = undefined }
     const ticketsFromCart = this.props.cart.tickets;
     const ticketsIds = Object.keys(ticketsFromCart);
     const tickets = ticketsIds.map(id => ({
       quantity: ticketsFromCart[id].quantity,
-      productId: id
+      product: id
     }));
 
-    this.props.createCartRequest(tickets[0]);
+    /**
+     * HERE WE NEED A USER ID THAT MEANS A USER REDUCER IS MANDATORY
+     * - Create a User Reducer with a random mongo ID as ID
+     * 
+     * - When the ID is setted up and the Car Request is triggered 
+     * then we need send ID as payload to POST /cart.
+     * 
+     * - Storage the User ID in local context (cookies, localstorage) 
+     * in order to reuse if the user is not signed up.
+     * 
+     * - If the Cart expire then ID will be removed from local storage context
+     * 
+     * - If the user add new tickets to the cart new ID needs to be generated 
+     * and repeat same steps above mentioned
+     * 
+     * - Go to Checkout. and make Order Store logic.
+     * 
+     */
+    this.props.createCartRequest(tickets);
     // Router.pushRoute(
     //   '/event/el-petronio-alvarez/5b7c1fa40471bd12b9411151/checkout'
     // );
